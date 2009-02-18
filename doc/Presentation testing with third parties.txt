@@ -1,0 +1,34 @@
+Testing the system by dividing the test into two parts.
+1)Data testing
+		Testing the functions
+		Multiple choices
+		Evaluating the output
+
+2)Presentation testing with third parties 
+	       Design
+	       Functionality
+
+Test subject Johan Wester and Martin Gräntz was allowed to try our system for 15 minutes.
+5 minutes alone 10 minutes following our leads.
+
+They both agreed on the page being too bloated on the /list page.
+Being specific they were referring to the search was too bloated and a 
+common simple search could be done on the menu side of the page.
+
+Also that the position of each part of the /list such as the clean and search button could be under the list of techniques.
+
+Johan said that the page is too 'rectangual' and Martin emphasized that a dark side
+is harder to read then a bright.
+
+The search test that we lead them on was to make sure they understood how the search worked.
+
+We told them to first read and remember small parts of each project (we were using three projects at the time)
+
+And then told them to find each project and that alone using unique search terms and ways of using both the search fields and techniques.
+This is to test the functionality of the search function retrieve_projects.
+
+Both did flawless with our help.
+They were positive to the search function itself being highly accurate and very specific depending on search requirements, however it is still bloated and that is something we can work on, by having the advanced search on it's own page, and a search box under the menu, the search box being a search through all search fields.
+
+Some changes was made to the website after user testing.
+Brighter colours, hi-light to the menu, larger and bolder fonts.

@@ -1,0 +1,83 @@
+Portfolio has been tested on both OS X Leopard and Debian.
+
+You are required to have:
+Python - http://www.python.org
+python2.5 - An interactive high-level object-oriented language (version 2.5)
+
+Apache2 - http://www.apache.org/
+apache2 - Next generation, scalable, extendable web server
+
+mod_python - http://httpd.apache.org/modules/python-download.cgi
+libapache2-mod-python - Apache 2 module that embeds Python within the server
+
+Kid-Templating - http://www.kid-templating.org/
+python-kid - simple Pythonic template language for XML based vocabularies
+
+Our recomendation is to run this on Debian, then you can just 
+use apt-get to #get all required applications.
+This installation manual will explain how to install and configure it to work
+with Debian, but most *nix systems are similar and the manual can easily
+be adapted to other systems.
+
+First get python by typing:
+apt-get install python
+
+Apache2
+apt-get install apache2
+
+Kid-templating
+apt-get install kid
+
+mod_python
+apt-get install libapache2-mod-python
+
+
+Configure Apache
+
+Start of with creating a virtual host by copying
+/etc/apache2/sites-available/default 
+and rename the new file to 
+/etc/apache2/sites-available/portfolio
+
+Now edit it with your favourite editor
+and do the following changes:
+
+Remove NameVirtualHost * 
+
+add 'ServerName portfolio' in one of the directives, under the first <VirtualHost *> 
+
+Lets tell apache where our portfolio is by changing
+/var/www 
+to something where MyPortFolio is located eg
+/home/<user>/MyPortfolio
+Make sure that MyPortFolio is there, otherwise make that directory
+Change that in both document root and directory
+
+We also need to add the support for python by adding the following lines under the directory
+SetHandler mod_python 
+PythonHandler mod_python.publisher 
+PythonDebug On
+
+Now we don't want mod_python to handle everything with PythonHandler.
+Some files, eg picture files such as .jpg and .png are files that Apache should handle instead.
+Therefor add these following lines
+
+<FilesMatch "\.(gif|html|jpg|jpeg|png|css)$"> 
+     SetHandler default-handler 
+</FilesMatch> 
+
+You could add other file-exetensions there as well
+
+Now we need Debian to know about our new Virtual Host.
+Edit /etc/hosts and add:
+
+127.0.0.1 	localhost portfolio
+
+And activate this new host by typing this command in the terminal
+a2ensite portfolio
+
+And then restart Apache
+/etc/init.d/apache2 restart
+
+Now if MyPortFolio combined with the 'web' folder is in /home/<user>/ you should be able to see the pagein your browser.
+

@@ -1,0 +1,99 @@
+Testing the system by dividing the test into two parts.
+1)Data testing
+		Testing the functions
+		Multiple choices
+		Evaluating the output
+
+2)Presentation testing with third parties 
+	       Design
+	       Functionality
+	       
+Data
+The data.csv file contains the following data (values)
+
+0,Portfolio,"2008-08-01","2008-09-30",tdp003,"Administration of own computer enviroment",6,"python,linux,emacs","Project made in XHTML/CSS for presenting projects made throughout education","Lorem Ipsum",images/portfolio.jpg,images/portfolio.jpg,2,lookup_project?id=0
+
+When the data.csv is not found the error code is 1, 
+if the project is not found the error code is 2
+and if everything works as  intended the error code is 0.
+
+We will not ouput the error codes here since it will always return a tuple with (error code, None)
+If it doesn't work as in finding or modifying the data.csv it will always return None
+
+These values are going to be used in our functions, and depending on results we can tell wether they are functional and working or flawed.
+
+init()
+init() does only return wether the function worked or did not work, however what init() does is appending the values from data.csv to a list where the values are combined with the appropiate key in a dictionary, the first line in the csv file (fields) are the keys for the dictionary. This is then assigned to a global variable.
+
+finding data.csv
+>>> init()
+0
+
+not finding data.csv
+>>> init()
+1
+
+project_count()
+Returns a tuple with error code and the ammount of projects
+
+>>> project_count()
+(0, 1)
+
+lookup_project(id) 
+Returns a tuple with error code and project depending on argument.
+Three searches:
+id not in range
+id in range
+id as string
+
+int(id) above len(projects), 6
+>>> lookup_project(6)
+(2, None)
+
+int(id) in range of len(projects), 0
+>>> lookup_project(0)
+(0, {'big_image': u'images/portfolio.jpg', 'project_name': u'Portfolio', 'course_name': u'Administration of own computer enviroment', 'project_no': u'0', 'end_date': u'2008-09-30', 'techniques_used': [u'python', u'linux', u'emacs'], 'academic_credits': u'6', 'small_image': u'images/portfolio.jpg', 'start_date': u'2008-08-01', 'course_id': u'tdp003', 'external_link': u'lookup_project?id=0', 'short_description': u'Project made in XHTML/CSS for presenting projects made throughout education', 'long_description': u'Lorem Ipsum', 'group_size': u'2'})
+
+string(id)
+>>> lookup_project('project0')
+lookup_project('project0')
+(2, None)
+
+Returns the projects matching the criteria.
+For the following functions we will add more data to the data.csv file for testing purposes.
+retrieve_projects(sort_by='start_date', sort_order='asc', techniques=None, search=None, search_fields=None)
+
+
+>>> retrieve_projects(sort_by='start_date', sort_order='desc', techniques=None, search='tdp003', search_fields='course_id')
+(0, [{'big_image': u'images/portfolio.jpg', 'project_name': u'Portfolio', 'course_name': u'Administration of own computer enviroment', 'project_no': u'0', 'end_date': u'2008-09-30', 'techniques_used': [u'python', u'linux', u'emacs'], 'academic_credits': u'6', 'small_image': u'images/portfolio.jpg', 'start_date': u'2008-08-01', 'course_id': u'tdp003', 'external_link': u'lookup_project?id=0', 'short_description': u'Project made in XHTML/CSS for presenting projects made throughout education', 'long_description': u'Lorem Ipsum', 'group_size': u'2'}])
+
+>>> retrieve_projects(sort_by='project_name', sort_order='desc', techniques='c++', search=None, search_fields=None)
+(0, [{'big_image': u'images/pics.jpg', 'project_name': u'Aname', 'course_name': u'Agame', 'project_no': u'0', 'end_date': u'2008-09-30', 'techniques_used': [u'c++'], 'academic_credits': u'6', 'small_image': u'images/pics.jpg', 'start_date': u'2008-08-01', 'course_id': u'tdp003', 'external_link': u'lookup_project?id=1', 'short_description': u'Ashortdescription', 'long_description': u'Longer description.', 'group_size': u'2'}])
+
+>>> retrieve_projects(sort_by='start_date', sort_order='asc', techniques=None, search='2', search_fields='group_size')
+(0, [{'big_image': u'images/portfolio.jpg', 'project_name': u'Portfolio', 'course_name': u'Administration of own computer enviroment', 'project_no': u'0', 'end_date': u'2008-09-30', 'techniques_used': [u'python', u'linux', u'emacs'], 'academic_credits': u'6', 'small_image': u'images/portfolio.jpg', 'start_date': u'2008-08-01', 'course_id': u'tdp003', 'external_link': u'lookup_project?id=0', 'short_description': u'Project made in XHTML/CSS for presenting projects made throughout education', 'long_description': u'Lorem ipsum dolor sit amet.', 'group_size': u'2'}, {'big_image': u'images/pics.jpg', 'project_name': u'Aname', 'course_name': u'Agame', 'project_no': u'0', 'end_date': u'2008-09-30', 'techniques_used': [u'c++'], 'academic_credits': u'6', 'small_image': u'images/pics.jpg', 'start_date': u'2008-08-01', 'course_id': u'tdp004', 'external_link': u'lookup_project?id=1', 'short_description': u'Ashortdescription', 'long_description': u'Longer description.', 'group_size': u'2'}])
+
+>>> retrieve_projects(sort_by='start_date', sort_order='desc', techniques='java', search=None, search_fields=None)
+(0, [])
+
+
+This function is large and further testing will be done one live system with a user during the beta testing.
+But as it seems now it is fully functional.
+Testing combined presentation is due with User-test
+
+retrieve_techniques()
+Returns a tuple and a list with techniques in the entire data.csv
+
+>>> retrieve_techniques()
+(0, [u'c++', u'emacs', u'linux', u'python'])
+
+retrieve_technique_stats()
+Returns a tuple and a list with one row per technique in the project information component.
+The first element of the tuple is the error code, and the second is the list containing each technique as a dictionary,
+where projects is a list containg all projects that uses that technique. 
+
+>>> retrieve_technique_stats()
+(0, [{'count': 1, 'name': u'c++', 'projects': [{'id': u'0', 'name': u'Aname'}]}, {'count': 1, 'name': u'emacs', 'projects': [{'id': u'0', 'name': u'Portfolio'}]}, {'count': 1, 'name': u'linux', 'projects': [{'id': u'0', 'name': u'Portfolio'}]}, {'count': 1, 'name': u'python', 'projects': [{'id': u'0', 'name': u'Portfolio'}]}])
+
+
+

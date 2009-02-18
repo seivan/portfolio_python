@@ -1,0 +1,290 @@
+#!/usr/bin/env python
+#! -*- coding: utf-8 -*-
+
+import csv
+from operator import itemgetter
+import sys
+from time import strftime
+import os
+#Keep all the constants in one place,
+current_time=str(strftime("%y-%m-%d %H:%M:%S")) #year-month-day hour:minutes:seconds - eg: 08-10-10 23:32:56
+csv_not_found = 1
+project_not_found = 2
+works_ok = 0
+#directory=os.path.dirname(__file__)
+#logfile= os.path.dirname(__file__) + os.sep +'log.txt'
+#csvfile=  os.path.dirname(__file__) + os.sep +'data.csv'
+
+def log(msg):
+        '''
+        name
+        parameter
+        description
+        result
+        '''
+        log = open('/home/seivan/portfolio/web/log.txt', 'a')
+        log.write(current_time + msg +'\n')
+        log.close()
+
+def init():
+
+        '''
+        name
+        parameter
+        description
+        result
+        '''
+
+        '''
+        Reads a csv file and parse the values to unicode
+        projects : list of all projects, each as a dict
+
+        '''
+
+        global projects
+        projects = []
+
+        try:
+                in_file = open('/home/seivan/portfolio/web/data.csv', "r")
+
+        except:  #If csv doesnt exist return error code and log
+                log(': init() was called, CSV file not found! \n')
+                return csv_not_found
+
+        else:
+                in_file = open('/home/seivan/portfolio/web/data.csv', 'r')
+                in_file_csv = csv.DictReader(in_file)
+                for row in in_file_csv: # Convert every value in project dictionary to unicode
+                        projects.append(dict((k,v.decode("utf8")) for k,v in row.iteritems()))
+                for project in projects: # Make the techniques field to a list
+                        project['techniques_used'] = project['techniques_used'].rsplit(',')
+        # If no exceptions was caught write log and return OK
+        log(': init() was called, Function returned OK!')
+        return works_ok
+
+def project_count():        
+
+	'''
+	name
+	parameter
+	description
+	result
+	'''
+	
+	'''
+	Returns the sum of the project list ie number of projects
+	
+	projects : list of all projects as dictionaries inside a list
+	'''
+
+	init()
+        
+	if len(projects) <= 0 or projects == (csv_not_found, None) : # Write to log that csv is not found if projects is empty 
+		log(': project_count() was called, CSV file not found!') 
+		return (csv_not_found, None)
+    
+	else: # Write to log that everything ran ok if no exceptions was ran into
+		log(': project_count() was called, Function returned OK!')
+		return (works_ok, len(projects))
+
+def lookup_project(id):
+	'''
+	name
+	parameter
+	description
+	result
+	'''
+
+	'''
+	Returns all info about a project with specified id
+    
+	id : integer for project number
+	'''
+
+	init()
+	if id >= 0 and id < len(projects): # If id is within bounds report into log that function ran ok
+		log(': project_count() was called, Function returned OK!')
+		return (works_ok, projects[id])
+    
+	elif id>=len(projects): # or id is not type('int'):
+		# When id is outside of bounds write to log and report that project wasnt found
+		log(': project_count() was called, Project not found!')
+		return (project_not_found, None)
+
+def retrieve_projects(sort_by='start_date', sort_order='asc', techniques=None, search=None, search_fields=None):
+	'''
+	Retrieve certain projects when the user chooses to specify a search
+	and which fields to search on. The function also handles a field to sort_by 
+	and which order to sort in
+
+	First search with techniques, if it is None, then skip this part, if not, everything in techniques must match
+	everything in project['techniques_used'].split(',').
+	Then carry on with the regular search, where not everything has to match.
+	If nothing is found, return an empty list
+
+	search_projects: returns list containing all projects matching user query
+	
+	
+	init()
+	search_projects = []
+
+	if type(search_fields) == type('str'):
+		search_fields = [search_fields]
+	
+	if type(techniques) == type('str'):
+		techniques = [techniques]
+
+	keys = []
+	keys = search_fields2
+
+	
+	if techniques is None and search is None and search_fields is None:
+		print "0"
+		return (works_ok, projects)
+
+
+	if techniques == True or search==None:
+		search = ""
+		search_fields = projects[0].keys()
+		techniques = str(techniques)
+		keys = projects[0].keys()
+		for project in projects:
+			for technique in project['techniques_used']:
+				if technique in techniques:
+					print "user"
+					search_projects.append(project)			
+		
+		#return(works_ok, search_projects)
+		
+	list_of_projects = search_projects[:]
+	
+	if search:
+		for project in list_of_projects:
+			keys = project.keys()
+			for key in keys: # Search every field
+				if str(search).lower() in project[key]: #.lower(): # If freetext search is in any project keys print found 
+					search_projects.append(project)
+					print "1"
+	elif search_fields:
+		for project in list_of_projects:        
+			keys = search_fields # Assign all fields for a project to a variabl
+			for key in keys:
+				if str(search).lower() in str(project[key]).lower():
+					search_projects.append(project)
+					print "2"
+	
+	if search_projects == []:
+		log(': retrieve_projects() was called, Project not found!')
+		return (project_not_found, None)
+    
+	for project in search_projects:
+		while search_projects.count(project) !=1:
+			search_projects.remove(project)
+			print "4"
+    
+    
+	'''
+	if type(search_fields) == type('str'):
+        	search_fields = [search_fields]
+
+        if type(techniques) == type('str'):
+        	techniques = [techniques]
+
+	init()
+
+	projects_to_search = []
+	projects_matching = []
+
+	if techniques:
+    		for project in projects:
+        		project_matches = False
+
+       	 		for technique in techniques:
+        			if str(technique).lower() in str(project['techniques_used']).lower():
+                			project_matches = True
+            
+        		if project_matches:
+        			projects_to_search.append(project)
+ 	else:
+		projects_to_search = projects
+
+	if search:
+		for project in projects_to_search:
+			project_matches = False
+
+			if search_fields:
+        			for field in search_fields:
+                    			if str(search).lower() in str(project[field]).lower():
+                        			project_matches = True
+			else:
+        			for value in project.itervalues():
+                			if str(search).lower() in str(value).lower():
+                				project_matches = True
+
+			if project_matches:
+                		projects_matching.append(project)
+	else:
+		projects_matching = projects_to_search
+
+
+	if sort_order == 'asc':
+	    #search_projects = sorted(search_projects, key=itemgetter(sort_by))
+		log(': retrieve_projects() was called, Function returned OK!')
+		print "5"
+		return (works_ok, projects_matching)    
+    
+	elif sort_order ==  'desc':
+		projects_matching = sorted(projects_matching, reverse=True, key=itemgetter(sort_by))
+		log(current_time + ': retrieve_projects() was called, Function returned OK!')
+		print "10"
+		return (works_ok, projects_matching) 
+    
+	else:
+		log(': retrieve_projects() was called, Project not found!')
+		print "178"
+		return (project_not_found, None) 
+
+
+def retrieve_techniques():
+	init()
+	techniques = []
+	project_list = []
+	project_list = projects
+	for project in projects:
+		for technique in project['techniques_used']:
+			if techniques.count(technique.lower()) == 0:
+				techniques.append(technique.lower())
+	return (works_ok, sorted(techniques))
+    
+	if techniques == []:
+		log(': retrieve_techniques() was called,Project not found!')
+		return (project_not_found, None) # Return error code and list as a tuple, 0 = file not found
+	else:
+		log(': retrieve_techniques() was called, Function returned OK!')
+		return (works_ok, techniques) # 1 = Everything is ok
+
+
+
+def retrieve_technique_stats():
+    init()
+
+    tech_stats = []
+    
+    for technique in retrieve_techniques()[1]:
+        used_by = []
+        usage_count = 0
+
+        for project in projects:
+            if technique in [tech.lower() for tech in project['techniques_used']]:
+                used_by.append({'id': project['project_no'], 'name': project['project_name']})
+                usage_count += 1
+    
+        tech_stats.append({'name': technique, 'count': usage_count, 'projects': used_by})
+	tech_stats = sorted(tech_stats, key=itemgetter('name'))
+	
+    return (works_ok, tech_stats)
+
+	
+projects = []
+init()
+

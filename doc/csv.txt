@@ -1,0 +1,20 @@
+Project Name: Is representented in the csv_file as the column project_name, changing this in csv file will immediately affect the portfolio page and end up on project? page (containing all info about project), since its dynamically generated
+
+Project Number: This is the number requested from project?id, changing this will not have any impact on links from list or techniques page, but the link will instead reference to the project number you just edited. 
+Start Date: This is the time when a project course starts and can be changed under column start_date in data.csv
+End Date: Date when project course ended and you change it under end_date in data.csv
+
+Course ID: The coursecode from university, for example TDP003, you edit it under course_id in the csvfile.
+
+Course Name: This is the name of the course that the project was made in, for exampl "Objectorientated Game" and is changed under column course_name.
+
+Short Description: This is a shorter description of the project which is displayed when you search for the project, and is changed under the short_description column in the csv file.
+
+Long Description: Here you writer a longer description of the project that the user will see when he goes the page of the project.
+
+Small Image: This is basically a thumbnail image and you edit the path to it under small_image, for ex "images/c++_tn.jpg"
+
+Big Image: Here you have a fullsize image which will be displayed when you click the small image, for ex "imges/c++.jpg"
+Group Size: The amount of people involved in making the project, changed under group_size column.
+
+External Link: Under this field you add a link if it has a separate/external page, for ex "http://www.c++-project.se", you change this under external_link, this is not used in our portfolio but can easily be expanded if you make bigger projects ith their own homepage(s).

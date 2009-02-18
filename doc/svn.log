@@ -1,0 +1,233 @@
+------------------------------------------------------------------------
+r745 | seihe333@UND.IDA.LIU.SE | 2008-10-17 18:38:05 +0200 (Fri, 17 Oct 2008) | 1 line
+
+Edited data.py to be less exploitable, also fixed desc search and lookup_projectabove the length of project returned error, some flawed html found will edit now
+------------------------------------------------------------------------
+r744 | seihe333@UND.IDA.LIU.SE | 2008-10-17 18:16:38 +0200 (Fri, 17 Oct 2008) | 1 line
+
+The data.py was too corrupted with indententation errors from VIM, and too self-explanatory comments were removed to lighten the code
+------------------------------------------------------------------------
+r743 | seihe333@UND.IDA.LIU.SE | 2008-10-17 18:12:34 +0200 (Fri, 17 Oct 2008) | 1 line
+
+Editing data PY after Johans Vim... might need to edit an older version and upload that one instead
+------------------------------------------------------------------------
+r742 | seihe333@UND.IDA.LIU.SE | 2008-10-17 18:06:16 +0200 (Fri, 17 Oct 2008) | 1 line
+
+Removing a small portion from the presentation layers to make them look similar
+------------------------------------------------------------------------
+r741 | seihe333@UND.IDA.LIU.SE | 2008-10-17 18:04:06 +0200 (Fri, 17 Oct 2008) | 1 line
+
+addin data.py, and documentation, Code is fully functional now
+------------------------------------------------------------------------
+r740 | seihe333@UND.IDA.LIU.SE | 2008-10-17 18:00:48 +0200 (Fri, 17 Oct 2008) | 1 line
+
+
+------------------------------------------------------------------------
+r739 | seihe333@UND.IDA.LIU.SE | 2008-10-17 17:49:51 +0200 (Fri, 17 Oct 2008) | 1 line
+
+removing portfoliO
+------------------------------------------------------------------------
+r738 | seihe333@UND.IDA.LIU.SE | 2008-10-17 17:45:31 +0200 (Fri, 17 Oct 2008) | 1 line
+
+Removing older files again
+------------------------------------------------------------------------
+r737 | seihe333@UND.IDA.LIU.SE | 2008-10-17 17:39:14 +0200 (Fri, 17 Oct 2008) | 1 line
+
+Adding local working files
+------------------------------------------------------------------------
+r736 | seihe333@UND.IDA.LIU.SE | 2008-10-17 17:36:18 +0200 (Fri, 17 Oct 2008) | 1 line
+
+Removing last of the odler files, preparing for final product
+------------------------------------------------------------------------
+r735 | seihe333@UND.IDA.LIU.SE | 2008-10-17 17:34:37 +0200 (Fri, 17 Oct 2008) | 1 line
+
+Removing older files
+------------------------------------------------------------------------
+r734 | johno244@UND.IDA.LIU.SE | 2008-10-17 07:06:20 +0200 (Fri, 17 Oct 2008) | 1 line
+
+fully commented data.py added, readable code
+------------------------------------------------------------------------
+r733 | seihe333@UND.IDA.LIU.SE | 2008-10-17 05:50:02 +0200 (Fri, 17 Oct 2008) | 1 line
+
+Uploading latest revision from local, works as intended, just comments left
+------------------------------------------------------------------------
+r732 | seihe333@UND.IDA.LIU.SE | 2008-10-17 05:40:47 +0200 (Fri, 17 Oct 2008) | 1 line
+
+Comments and style left
+------------------------------------------------------------------------
+r731 | seihe333@UND.IDA.LIU.SE | 2008-10-17 05:31:09 +0200 (Fri, 17 Oct 2008) | 1 line
+
+Adding my local files, everything works as intended. Comments and style left
+------------------------------------------------------------------------
+r730 | seihe333@UND.IDA.LIU.SE | 2008-10-17 05:22:11 +0200 (Fri, 17 Oct 2008) | 1 line
+
+Removing remaining files, for newer local files
+------------------------------------------------------------------------
+r729 | seihe333@UND.IDA.LIU.SE | 2008-10-17 05:15:21 +0200 (Fri, 17 Oct 2008) | 1 line
+
+Removing old files, to make space for newer local versions
+------------------------------------------------------------------------
+r717 | seihe333@UND.IDA.LIU.SE | 2008-10-14 12:56:52 +0200 (Tue, 14 Oct 2008) | 1 line
+
+I have rewritten the retrieve_project(*), it works, but need to be cleaned up
+------------------------------------------------------------------------
+r716 | seihe333@UND.IDA.LIU.SE | 2008-10-14 12:48:29 +0200 (Tue, 14 Oct 2008) | 1 line
+
+I have rewritten the retrieve_project(*), it works, but need to be cleaned up
+------------------------------------------------------------------------
+r715 | seihe333@UND.IDA.LIU.SE | 2008-10-14 12:47:50 +0200 (Tue, 14 Oct 2008) | 1 line
+
+I have rewritten the retrieve_project(*), it works, but need to be cleaned up
+------------------------------------------------------------------------
+r711 | seihe333@UND.IDA.LIU.SE | 2008-10-14 05:43:49 +0200 (Tue, 14 Oct 2008) | 1 line
+
+Search_function was defect, fixed most of it, just argument->techniques=[] left
+------------------------------------------------------------------------
+r708 | johno244@UND.IDA.LIU.SE | 2008-10-14 04:15:00 +0200 (Tue, 14 Oct 2008) | 1 line
+
+data updated
+------------------------------------------------------------------------
+r703 | johno244@UND.IDA.LIU.SE | 2008-10-13 23:29:22 +0200 (Mon, 13 Oct 2008) | 1 line
+
+data backup added
+------------------------------------------------------------------------
+r702 | johno244@UND.IDA.LIU.SE | 2008-10-13 23:27:01 +0200 (Mon, 13 Oct 2008) | 1 line
+
+datalayer, need to fix retrieve_techniques() and retrieve_technique_stats()
+------------------------------------------------------------------------
+r603 | johno244@UND.IDA.LIU.SE | 2008-10-13 03:08:45 +0200 (Mon, 13 Oct 2008) | 1 line
+
+page done.. some minor tweaks needs to be done to layout.. search function and exception handling + logging
+------------------------------------------------------------------------
+r573 | seihe333@UND.IDA.LIU.SE | 2008-10-12 09:30:50 +0200 (Sun, 12 Oct 2008) | 1 line
+
+Projects=page worked flawless, just search function left
+------------------------------------------------------------------------
+r569 | seihe333@UND.IDA.LIU.SE | 2008-10-12 05:47:21 +0200 (Sun, 12 Oct 2008) | 1 line
+
+Adding new Projects.py
+------------------------------------------------------------------------
+r568 | seihe333@UND.IDA.LIU.SE | 2008-10-12 05:46:41 +0200 (Sun, 12 Oct 2008) | 2 lines
+
+removing old file, project.py (this the bad version)
+
+------------------------------------------------------------------------
+r567 | seihe333@UND.IDA.LIU.SE | 2008-10-12 05:45:26 +0200 (Sun, 12 Oct 2008) | 1 line
+
+removing old file, style.css (from template folder, not web/style)
+------------------------------------------------------------------------
+r566 | seihe333@UND.IDA.LIU.SE | 2008-10-12 05:44:38 +0200 (Sun, 12 Oct 2008) | 1 line
+
+removing old file, list.kid
+------------------------------------------------------------------------
+r565 | seihe333@UND.IDA.LIU.SE | 2008-10-12 05:40:34 +0200 (Sun, 12 Oct 2008) | 1 line
+
+Creating our portfolio, projects, techniques, index is now done, just search and individual project left, combined with readme, documentation, testing and diary updates
+------------------------------------------------------------------------
+r564 | seihe333@UND.IDA.LIU.SE | 2008-10-12 04:09:52 +0200 (Sun, 12 Oct 2008) | 1 line
+
+Worked on data.py, style.css, and all the kid files. Slight modifications on looks in CSS, nothing major. However some work needed on project.kid, I got the base up and running, just need more content such as project['small_image'] and etc
+------------------------------------------------------------------------
+r563 | johno244@UND.IDA.LIU.SE | 2008-10-12 03:06:03 +0200 (Sun, 12 Oct 2008) | 1 line
+
+project added, project?id=x works
+------------------------------------------------------------------------
+r562 | johno244@UND.IDA.LIU.SE | 2008-10-12 02:20:06 +0200 (Sun, 12 Oct 2008) | 1 line
+
+some changes made in init(), data.csv updated no blank spaces and more text/better pic links and description
+------------------------------------------------------------------------
+r561 | seihe333@UND.IDA.LIU.SE | 2008-10-12 01:01:25 +0200 (Sun, 12 Oct 2008) | 1 line
+
+Adding index.kid and templates/style.css, both are finished now and ready to be used, css is adjusted to work with all pages, might need adjustments for pictures since picture-div's haven't been tested yet
+------------------------------------------------------------------------
+r534 | johno244@UND.IDA.LIU.SE | 2008-10-11 02:38:40 +0200 (Sat, 11 Oct 2008) | 1 line
+
+data.py fully commented and documentated
+------------------------------------------------------------------------
+r533 | johno244@UND.IDA.LIU.SE | 2008-10-11 02:08:17 +0200 (Sat, 11 Oct 2008) | 1 line
+
+fixed some error in data.py
+------------------------------------------------------------------------
+r532 | johno244@UND.IDA.LIU.SE | 2008-10-11 01:58:50 +0200 (Sat, 11 Oct 2008) | 1 line
+
+added exception handling in init(), logging for all functions, data.csv gets reread constantly, and fixed a bug in lookup_project
+------------------------------------------------------------------------
+r531 | johno244@UND.IDA.LIU.SE | 2008-10-11 00:18:11 +0200 (Sat, 11 Oct 2008) | 1 line
+
+taking break.. one commit
+------------------------------------------------------------------------
+r529 | johno244@UND.IDA.LIU.SE | 2008-10-10 21:48:44 +0200 (Fri, 10 Oct 2008) | 1 line
+
+added project?id=X and updated todo, it just prints out each value of every key
+------------------------------------------------------------------------
+r528 | johno244@UND.IDA.LIU.SE | 2008-10-10 21:47:35 +0200 (Fri, 10 Oct 2008) | 1 line
+
+added project?id=X and updated todo, it just prints out each value of every key
+------------------------------------------------------------------------
+r519 | johno244@UND.IDA.LIU.SE | 2008-10-10 20:41:40 +0200 (Fri, 10 Oct 2008) | 1 line
+
+added a todo list
+------------------------------------------------------------------------
+r516 | johno244@UND.IDA.LIU.SE | 2008-10-10 19:22:46 +0200 (Fri, 10 Oct 2008) | 1 line
+
+minor changes made to techniques template to make it working
+------------------------------------------------------------------------
+r515 | johno244@UND.IDA.LIU.SE | 2008-10-10 19:19:45 +0200 (Fri, 10 Oct 2008) | 1 line
+
+techniques kid template done
+------------------------------------------------------------------------
+r509 | johno244@UND.IDA.LIU.SE | 2008-10-10 17:54:00 +0200 (Fri, 10 Oct 2008) | 1 line
+
+minor changes made..
+------------------------------------------------------------------------
+r501 | johno244@UND.IDA.LIU.SE | 2008-10-10 16:09:30 +0200 (Fri, 10 Oct 2008) | 1 line
+
+sorted minor bug in retrieve_projects where search_fields werent ommited correctly, line 39 and if clauses
+------------------------------------------------------------------------
+r399 | seihe333@UND.IDA.LIU.SE | 2008-10-09 08:08:48 +0200 (Thu, 09 Oct 2008) | 1 line
+
+Finished up some old codes, cleaned up, just comments and document left, code is fully functional
+------------------------------------------------------------------------
+r322 | johno244@UND.IDA.LIU.SE | 2008-10-07 11:32:23 +0200 (Tue, 07 Oct 2008) | 1 line
+
+retrieve_projects() done, just gotta finish comments
+------------------------------------------------------------------------
+r320 | seihe333@UND.IDA.LIU.SE | 2008-10-07 11:08:15 +0200 (Tue, 07 Oct 2008) | 1 line
+
+Sorting code is done on all function, finished every function except retrieve_project(), just lowercase comparison and sorting left
+------------------------------------------------------------------------
+r298 | johno244@UND.IDA.LIU.SE | 2008-10-06 15:07:32 +0200 (Mon, 06 Oct 2008) | 1 line
+
+last commit of day
+------------------------------------------------------------------------
+r296 | johno244@UND.IDA.LIU.SE | 2008-10-06 14:20:50 +0200 (Mon, 06 Oct 2008) | 1 line
+
+just have to fix sorting
+------------------------------------------------------------------------
+r292 | johno244@UND.IDA.LIU.SE | 2008-10-06 11:20:07 +0200 (Mon, 06 Oct 2008) | 1 line
+
+we have worked some on retrieve_projects(), search seem to find but have to remove duplicates
+------------------------------------------------------------------------
+r285 | seihe333@UND.IDA.LIU.SE | 2008-10-06 09:41:28 +0200 (Mon, 06 Oct 2008) | 1 line
+
+Worked all night on Retrieve_techniques_stats(), it worksflawless now, also removed some ugly hacks, ie: replacing a for loop in retrieve_techniques() with set() to remove doublettes in the tech_list
+------------------------------------------------------------------------
+r282 | johno244@UND.IDA.LIU.SE | 2008-10-04 20:08:05 +0200 (Sat, 04 Oct 2008) | 1 line
+
+retrieve_technique_stats() done
+------------------------------------------------------------------------
+r281 | johno244@UND.IDA.LIU.SE | 2008-10-04 18:26:37 +0200 (Sat, 04 Oct 2008) | 1 line
+
+retrieve_technique_stats() working now
+------------------------------------------------------------------------
+r279 | johno244@UND.IDA.LIU.SE | 2008-10-04 16:34:16 +0200 (Sat, 04 Oct 2008) | 1 line
+
+updated stats(), need to find out how to get the projects: part working
+------------------------------------------------------------------------
+r278 | johno244@UND.IDA.LIU.SE | 2008-10-04 14:51:15 +0200 (Sat, 04 Oct 2008) | 1 line
+
+worked a bit on retrieve_technique_stats()
+------------------------------------------------------------------------
+r271 | seihe333@UND.IDA.LIU.SE | 2008-10-03 15:36:32 +0200 (Fri, 03 Oct 2008) | 1 line
+
+Cleaned code up, removed temporary lists, changed variable names
